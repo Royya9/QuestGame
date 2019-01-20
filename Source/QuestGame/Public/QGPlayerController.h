@@ -28,6 +28,9 @@ public:
 	void MoveForward(float value);
 
 	void PerformAction();
+	void Jump();
+	void JumpDecelerate();
+
 
 	AQGPawn * MyPawn = nullptr;
 
@@ -37,4 +40,16 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Setup")
 	float SideAcceleration = 10.f;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Setup")
+	float JumpAcceleration = 1000.f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Setup")
+	float JumpDeceleration = 1000.f;
+
+	UFUNCTION()
+	void BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+
+private:
+
+	bool bIsInAir = false;
 };

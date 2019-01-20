@@ -24,16 +24,17 @@ public:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(VisibleAnywhere, Category = "Setup")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Setup")
 	UStaticMeshComponent * StaticMesh = nullptr;
 
-	UPROPERTY(VisibleAnywhere, Category = "Setup")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Setup")
 	UCameraComponent * Camera = nullptr;
 
-	UPROPERTY(VisibleAnywhere, Category = "Setup")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Setup")
 	USpringArmComponent * SpringArm = nullptr;
 
-	UPROPERTY(VisibleAnywhere, Category = "Setup")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Setup")
 	UBoxComponent * BoxComp = nullptr;
 	   
+	
 };

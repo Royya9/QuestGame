@@ -23,6 +23,7 @@ AQGPawn::AQGPawn()
 	StaticMesh->SetGenerateOverlapEvents(false);
 	StaticMesh->SetLinearDamping(5.f);
 
+
 	BoxComp->SetupAttachment(RootComponent);
 	BoxComp->SetGenerateOverlapEvents(true);
 
