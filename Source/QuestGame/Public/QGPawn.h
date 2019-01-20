@@ -6,6 +6,12 @@
 #include "GameFramework/Pawn.h"
 #include "QGPawn.generated.h"
 
+//Forward Declarations
+class UStaticMeshComponent;
+class UCameraComponent;
+class USpringArmComponent;
+class UBoxComponent;
+
 UCLASS()
 class QUESTGAME_API AQGPawn : public APawn
 {
@@ -15,15 +21,19 @@ public:
 	// Sets default values for this pawn's properties
 	AQGPawn();
 
-protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(VisibleAnywhere, Category = "Setup")
+	UStaticMeshComponent * StaticMesh = nullptr;
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	UPROPERTY(VisibleAnywhere, Category = "Setup")
+	UCameraComponent * Camera = nullptr;
 
+	UPROPERTY(VisibleAnywhere, Category = "Setup")
+	USpringArmComponent * SpringArm = nullptr;
+
+	UPROPERTY(VisibleAnywhere, Category = "Setup")
+	UBoxComponent * BoxComp = nullptr;
+	   
 };
